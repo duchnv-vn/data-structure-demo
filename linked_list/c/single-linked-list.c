@@ -195,9 +195,9 @@ void update_node_at_specified_index(Node *head, int index, DataType data)
 void main(void)
 {
     printf("----- Single Linked List -----\n");
-    // Node *list1 = create_list(1);
-    // insert_node_to_head(&list1, 2);
-    // insert_node_to_head(&list1, 3);
+    Node *list1 = create_list(1);
+    insert_node_to_head(&list1, 2);
+    insert_node_to_head(&list1, 3);
 
     Node *list2 = create_list(10);
     insert_node_to_last(list2, 20);
