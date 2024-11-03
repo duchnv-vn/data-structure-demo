@@ -1,6 +1,18 @@
 local module = {}
 
 ---@param head table
+---@param cb function
+function module.foreach(head, cb)
+    local currNode = head
+    local index = 0
+    while currNode ~= nil do
+        index = index + 1
+        cb(currNode, index)
+        currNode = currNode.next
+    end
+end
+
+---@param head table
 function module.delete_first(head)
     return head.next
 end
@@ -46,10 +58,10 @@ end
 ---@param head table
 ---@param index number
 ---@param data any
-function module.update_at_specified_index(head, index, data)
+function module.update_by_index(head, index, data)
     local currNode = head
     local count = 0
-    while currNode.next ~= nil do
+    while currNode ~= nil do
         count = count + 1
         if index == count then
             currNode.data = data
@@ -90,7 +102,7 @@ end
 ---@param head table
 ---@param index number
 ---@param data any
-function module.insert_to_specified_index(head, index, data)
+function module.insert_by_index(head, index, data)
     local newNode = {
         data = data,
         next = nil

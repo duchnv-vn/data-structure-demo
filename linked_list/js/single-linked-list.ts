@@ -3,28 +3,31 @@ interface CustomNode {
   next: CustomNode | null;
 }
 
-const create_list = (data: any): CustomNode => {
-  const head = { data, next: null } as CustomNode;
-  return head;
-};
+class LinkedListNode {
+  head!: CustomNode;
 
-const insert_node_to_head = () => {};
+  constructor(data: any) {
+    this.head = { data, next: null };
+  }
 
-const insert_node_to_last = () => {};
+  insertToHead(data: any) {}
 
-const insert_node_to_specified_index = () => {};
+  insertToLast(data: any) {}
 
-const delete_first_node = () => {};
+  insertByIndex() {}
 
-const delete_last_node = () => {};
+  updateByIndex() {}
 
-const delete_specified_node_by_value = () => {};
+  deleteFirst() {}
 
-const delete_specified_node_by_index = () => {};
+  deleteLast() {}
 
-const update_node_at_specified_index = () => {};
+  deleteByValue() {}
+
+  deleteByIndex() {}
+}
 
 const main = () => {
-  const list1 = create_list(1);
+  const list1 = new LinkedListNode(10);
 };
 main();
