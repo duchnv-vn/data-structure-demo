@@ -29,7 +29,7 @@ end
 
 ---@param head table
 ---@param data any
-function module.delete_by_data(head, data)
+function module.delete_by_value(head, data)
     local currNode = head
     while currNode.next ~= nil do
         if currNode.next.data == data then

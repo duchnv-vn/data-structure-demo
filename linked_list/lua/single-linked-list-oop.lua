@@ -95,7 +95,7 @@ function module:delete_by_index(index)
 end
 
 ---@param data any
-function module:delete_by_data(data)
+function module:delete_by_value(data)
     local currNode = self.head
 
     while currNode.next ~= nil do
@@ -109,7 +109,9 @@ function module:delete_by_data(data)
 end
 
 function module:delete_first()
-    self.head = self.head.next
+    if self.head.next then
+        self.head = self.head.next
+    end
 end
 
 function module:delete_last()
