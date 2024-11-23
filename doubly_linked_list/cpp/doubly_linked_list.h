@@ -31,15 +31,17 @@ public:
 
     bool insert_by_index(int index, T data);
 
-    bool insert_by_index(int, index, T data);
-
-    bool insert_by_value(T value, T data);
-
     bool update_by_index(int index, T data);
+
+    bool update_many_by_value(T value, T data);
 
     bool remove_head();
 
     bool remove_tail();
+
+    bool remove_by_index(int index);
+
+    bool remove_many_by_value(T value);
 };
 
 #endif // DOUBLY_LINKED_LIST_H
