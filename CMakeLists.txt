@@ -6,7 +6,5 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(.)
 
 add_executable(data_structure_demo
-        singly_linked_list/cpp/main.cpp
-        singly_linked_list/cpp/singly_linked_list.cpp
-        singly_linked_list/cpp/singly_linked_list.h
+        stack/cpp/main.cpp
 )
