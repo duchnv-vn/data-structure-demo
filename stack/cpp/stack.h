@@ -5,7 +5,7 @@
 #include <cassert>
 using namespace std;
 
-template <class T>
+template <typename T>
 class Stack
 {
 private:
@@ -40,7 +40,7 @@ public:
 
     bool isEmpty() const { return size == 0; };
 
-    T getTop() { return size == 0 ? -1 : array[size - 1]; };
+    T getTop() { return array[size - 1]; };
 };
 
 #endif // STACK_H

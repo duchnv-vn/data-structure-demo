@@ -1,6 +1,9 @@
 #ifndef DOUBLY_LINKED_LIST_H
 #define DOUBLY_LINKED_LIST_H
 
+#include <iostream>
+using namespace std;
+
 template <class T>
 class Node
 {
@@ -9,7 +12,7 @@ public:
     Node<T> previous;
     Node<T> next;
 
-    Node(T d, Node<T> *p = nullptr, Node<T> *n = nullptr);
+    Node(T d, Node<T> *p = nullptr, Node<T> *n = nullptr) : data{d}, previous{p}, next{n} {};
 };
 
 template <class T>
@@ -19,29 +22,97 @@ class doubly_linked_list
     Node<T> *tail;
 
 public:
-    doubly_linked_list(T data);
+    doubly_linked_list()
+    {
+        head = nullptr;
+        tail = nullptr;
+    };
 
-    void forEach(bool fromHead, void (*callback_ptr)(T data));
+    void forEach(bool fromHead, void (*callback_ptr)(T data))
+    {
+        if (head == nullptr)
+        {
+            cout << "EMPTY LIST" << endl;
+            return;
+        }
 
-    T search_by_index(int index);
+        Node<T> *tempNode = fromHead ? head : tail;
+        while (tempNode != nullptr)
+        {
+            callback_ptr(tempNode->data);
+            tempNode = fromHead ? tempNode->next : tempNode->previous;
+        }
+    };
 
-    bool insert_to_head(T data);
+    T search_by_index(int index)
+    {
+        if (head == nullptr)
+        {
+            cout << "EMPTY LIST" << endl;
+            return;
+        }
 
-    bool insert_to_tail(T data);
+        int count = 0;
+        Node<T> *tempNode = head;
+        while (tempNode != nullptr)
+        {
+            if (count == index)
+                return tempNode;
 
-    bool insert_by_index(int index, T data);
+            tempNode = tempNode->next;
+            count++;
+        }
+    };
 
-    bool update_by_index(int index, T data);
+    bool insert_to_head(T data)
+    {
+        Node<T> newNode = {data, nullptr, head};
 
-    bool update_many_by_value(T value, T data);
+        if (head == nullptr)
+        {
+            head = newNode;
+            tail = head;
+        }
+        else
+        {
+            head->previous = &newNode;
+            head = newNode;
+        }
 
-    bool remove_head();
+        return true
+    };
 
-    bool remove_tail();
+    bool insert_to_tail(T data)
+    {
+        if (head == nullptr)
+            return insert_to_head(data);
 
-    bool remove_by_index(int index);
+        Node<T> newNode = {data, tail, nullptr};
+        tail->next = &newNode;
+        tail = newNode;
 
-    bool remove_many_by_value(T value);
+        return true;
+    };
+
+    bool insert_by_index(int index, T data)
+    {
+        if (/* condition */)
+        {
+            /* code */
+        }
+    };
+
+    bool update_by_index(int index, T data) {};
+
+    bool update_many_by_value(T value, T data) {};
+
+    bool remove_head() {};
+
+    bool remove_tail() {};
+
+    bool remove_by_index(int index) {};
+
+    bool remove_many_by_value(T value) {};
 };
 
 #endif // DOUBLY_LINKED_LIST_H
