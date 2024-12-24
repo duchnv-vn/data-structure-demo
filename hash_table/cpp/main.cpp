@@ -77,15 +77,50 @@ int main()
         cout << "Hash Key: " << hashFold(key, chunkSize) << endl;
     }
 
-    // Challenges
-    if (true)
+    // Define classes
+    if (false)
     {
         auto object1 = new HashEntry{"key1", 10};
         // cout << "object1.key: " << object1->key << endl;
         // cout << "object1.value: " << object1->value << endl;
 
-        auto table1 = new HashTable{};
+        auto table1 = new HashTable{10};
         cout << table1->isEmpty() << endl;
+    }
+
+    // Insertion in hash table
+    if (false)
+    {
+        auto ht = new HashTable{3}; // making three buckets
+        ht->insert("London", 2);
+        ht->insert("London", 10);
+        ht->insert("New York", 15);
+        ht->insert("Tokyo", 7);
+        ht->insert("Bangkok", 2);
+        ht->insert("Beijing", 6);
+        ht->insert("Islamabad", 9);
+        ht->display();
+    }
+
+    // Resizing in a Hash Table
+    if (true)
+    {
+        HashTable ht(4);
+        ht.insert("London", 2);
+        ht.insert("London", 10);
+        ht.insert("New York", 15);
+        ht.insert("Tokyo", 7);
+        ht.insert("Bangkok", 2);
+        ht.display();
+        cout << "-------------" << endl;
+        ht.resize(); // increase slots to 8
+        ht.insert("Beijing", 6);
+        ht.insert("Islamabad", 9);
+        ht.insert("New Delhi", 17);
+        ht.insert("Moscow", 12);
+        ht.insert("Amsterdam", 5);
+        ht.insert("Paris", 13);
+        ht.display();
     }
 
     return 0;
