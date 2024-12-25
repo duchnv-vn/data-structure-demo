@@ -141,7 +141,7 @@ int main()
     }
 
     // Deletion in Table
-    if (true)
+    if (false)
     {
         HashTable ht(2);
         ht.insert("London", 2);
@@ -161,6 +161,42 @@ int main()
         ht.display();
         cout << "-------------" << endl;
         ht.Delete("Islamabad");
+        ht.display();
+    }
+
+    // Complete Implementation
+    if (true)
+    {
+        HashTable ht(4);
+        ht.insert("London", 2);
+
+        ht.insert("London", 10);
+        ht.insert("New York", 15);
+        ht.insert("Tokyo", 7);
+        ht.insert("Bangkok", 2);
+        ht.insert("Beijing", 6);
+        ht.insert("Islamabad", 9);
+        ht.insert("New Delhi", 17);
+        ht.insert("Moscow", 12);
+        ht.display();
+        ht.resize();
+        ht.display();
+        ht.insert("Amsterdam", 5);
+        ht.insert("Paris", 13);
+        ht.insert("Istanbul", 19);
+        ht.insert("Kuala Lumpur", 1);
+        ht.insert("Jakarta", 8);
+        ht.insert("Glasgow", 3);
+        ht.insert("Seattle", 14);
+        cout << ht.search("London") << endl;
+        cout << ht.search("Moscow") << endl;
+        cout << ht.search("Berlin") << endl;
+        ht.display();
+        ht.Delete("London");
+        ht.display();
+        ht.Delete("Moscow");
+        ht.display();
+        ht.Delete("Istanbul");
         ht.display();
     }
 
