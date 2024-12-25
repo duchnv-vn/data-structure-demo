@@ -6,4 +6,4 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(.)
 
 add_executable(data_structure_demo
-        hash_table/cpp/main.cpp)
+        hash_table/cpp/challenges/find_symmetric_pairs_in_array.cpp)
