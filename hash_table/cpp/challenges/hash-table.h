@@ -35,9 +35,58 @@ public:
         return true;
     }
 
-    // int search(string k) {}
+    int search(string k)
+    {
+        if (isEmpty())
+            return -1;
 
-    // bool Delete() {}
+        auto hashIndex = getIndex(k);
+        if (hashIndex > size)
+            return -1;
+
+        auto currEntry = bucket[hashIndex];
+        if (currEntry == nullptr)
+            return -1;
+
+        while (currEntry != nullptr && currEntry->key != k)
+            currEntry = currEntry->next;
+
+        return currEntry != nullptr ? currEntry->value : -1;
+    }
+
+    bool Delete(string k)
+    {
+        if (isEmpty())
+            return false;
+
+        auto hashIndex = getIndex(k);
+        if (hashIndex > size)
+            return false;
+
+        auto currEntry = bucket[hashIndex];
+        if (currEntry == nullptr)
+            return false;
+
+        HashEntry *prevEntry = nullptr;
+        while (currEntry != nullptr)
+        {
+            if (currEntry->key == k)
+            {
+                if (prevEntry == nullptr /* in chain head */)
+                    bucket[hashIndex] = currEntry->next == nullptr ? nullptr : currEntry->next;
+                else
+                    prevEntry->next = currEntry->next == nullptr ? nullptr : currEntry->next;
+
+                delete currEntry;
+                return true;
+            }
+
+            prevEntry = currEntry;
+            currEntry = currEntry->next;
+        }
+
+        return false;
+    }
 
     bool resize()
     {
