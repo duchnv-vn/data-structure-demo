@@ -5,6 +5,7 @@ using namespace std;
 
 vector<vector<int>> FindSymmetric(int arr[][2], int size)
 {
+    // Remove duplicate
     unordered_map<int, int> ht;
     for (int i = 0; i < size; i++)
     {
@@ -12,6 +13,7 @@ vector<vector<int>> FindSymmetric(int arr[][2], int size)
             ht.insert({arr[i][0], arr[i][1]});
     }
 
+    // Find symmetrics
     vector<vector<int>> symPairs;
     for (auto it = ht.begin(); it != ht.end(); ++it)
     {
