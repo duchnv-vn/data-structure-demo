@@ -5,7 +5,6 @@ using namespace std;
 bool IsFormationPossible(string words_array[], int size, string target)
 {
     unordered_map<string, bool> combinedWordMap;
-
     for (int i = 0; i < size; i++)
     {
         for (int j = i; j < size; j++)
