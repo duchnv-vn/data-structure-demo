@@ -6,4 +6,4 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(.)
 
 add_executable(data_structure_demo
-        hash_table/cpp/challenges/find_non_repeat_integer_in_arr.cpp)
+        hash_table/cpp/challenges/remove_duplicate_from_linked_list.cpp)
