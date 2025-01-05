@@ -1,30 +1,55 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-#include "doubly_linked_list/cpp/doubly_linked_list.h"
+#include "DoublyLinkedList.h"
 
-template <typename T>
 class Queue
 {
 private:
-    int size;
-    T *items;
+    DoublyLinkedList items;
 
 public:
     Queue()
     {
-        size = 0;
+        items = *(new DoublyLinkedList{});
     };
 
     ~Queue() {};
 
-    bool enqueue(T value) {};
+    bool isEmpty()
+    {
+        return items.size == 0;
+    }
 
-    bool dequeue() {};
+    int getSize()
+    {
+        return items.size;
+    }
 
-    bool isEmpty() {};
+    int getFront()
+    {
+        return items.getHead();
+    }
 
-    T getFront() {};
+    int enqueue(int value)
+    {
+        return items.insertTail(value);
+    }
+
+    int dequeue()
+    {
+        return items.deleteHead();
+    }
+
+    int getTail()
+    {
+        return items.getTail();
+    }
+
+    bool showqueue()
+    {
+        return items.printList();
+    }
 };
 
 #endif // QUEUE_H
