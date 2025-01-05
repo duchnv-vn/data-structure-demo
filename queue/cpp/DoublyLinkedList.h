@@ -120,4 +120,26 @@ public:
         size--;
         return true;
     }
+
+    bool deleteTail()
+    {
+        if (isEmpty())
+            return false;
+
+        auto deleteNode = tail;
+        if (size == 1)
+        {
+            head = nullptr;
+            tail = nullptr;
+        }
+        else
+        {
+            tail = tail->previousElement;
+            tail->nextElement = nullptr;
+        }
+
+        delete deleteNode;
+        size--;
+        return true;
+    }
 };
