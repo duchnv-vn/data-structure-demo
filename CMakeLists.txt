@@ -6,4 +6,4 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(.)
 
 add_executable(data_structure_demo
-        stack/cpp/challenges/implement_2_stacks_using_1_array.cpp)
+        queue/cpp/challenges/reverse_first_k_ele_of_queue.cpp)
