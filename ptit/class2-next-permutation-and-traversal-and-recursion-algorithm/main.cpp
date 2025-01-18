@@ -8,5 +8,6 @@ int main() {
     // problem_1_solution_1();
     // problem_1_solution_2();
 
-    problem_2_solution_1();
+    // problem_2_solution_1();
+    problem_2_solution_2();
 }
