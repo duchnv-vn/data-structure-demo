@@ -8,28 +8,31 @@
 #include <iostream>
 using namespace std;
 
-void reverseArr(const int *A, const int n, int *newArr) {
+void reverseArr(const int &(int * A), int n) {
+    int reversedArr[n];
+
     for (int i = 0; i < n; i++) {
-        newArr[i] = A[n - i - 1];
+        reversedArr[i] = **A[n - i - 1];
     }
+
+    *A = reversedArr;
 }
 
 int main() {
     const auto size = 10;
-    const int originalArr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    const int arr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     cout << "Original array: ";
     for (int i = 0; i < size; i++) {
-        cout << originalArr[i] << " ";
+        cout << arr[i] << " ";
     }
     cout << endl;
 
-    int reversedArr[size] = {0};
-    reverseArr(originalArr, size, reversedArr);
+    reverseArr(&arr, size);
 
     cout << "Reversed array: ";
     for (int i = 0; i < size; i++) {
-        cout << reversedArr[i] << " ";
+        cout << arr[i] << " ";
     }
     cout << endl;
 

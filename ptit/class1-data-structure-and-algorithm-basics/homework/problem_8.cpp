@@ -20,10 +20,11 @@ using namespace std;
 void generateRandomNum(int *arr, const int n) {
     const auto minValue = 1;
     const auto maxValue = 1000000;
-    const auto randomNums = new int [maxValue];
+    const auto randomNums = new int [maxValue + 1];
 
-    iota(randomNums, randomNums + maxValue, minValue);
-    shuffle(randomNums, randomNums + maxValue, mt19937(random_device{}()));
+    for (int i = minValue; i <= 1000000; i++) {
+        randomNums[i] = i;
+    }
 
     for (int i = 0; i < n; i++) {
         arr[i] = randomNums[i];
