@@ -9,14 +9,16 @@ void print_binary(const int binary[], const int size) {
     cout << endl;
 }
 
-void next_bit_string(int binary[], int size, bool &OK) {
-    while (size >= 0 && binary[size - 1] != 0) {
-        binary[size - 1] = 0;
-        size--;
+void next_bit_string(int binary[], const int size, bool &OK) {
+    int i = size - 1;
+
+    while (i >= 0 && binary[i] != 0) {
+        binary[i] = 0;
+        i--;
     }
 
-    if (size >= 0) {
-        binary[size - 1] = 1;
+    if (i >= 0) {
+        binary[i] = 1;
     } else {
         OK = false;
     }
@@ -27,7 +29,7 @@ void next_bit_string(int binary[], int size, bool &OK) {
     *   - Thời gian: O(2^n) vì có 2^n chuỗi nhị phân.
     *   - Không gian: O(n) cho việc lưu trữ chuỗi nhị phân.
 */
-void problem_1_slution_1() {
+void problem_1_solution_1() {
     const int n = 4;
     int binary[n]{0};
 
@@ -53,7 +55,7 @@ void generate_binary_string(string binary, const int n) {
     *   - Thời gian: O(2^n) vì có 2^n chuỗi nhị phân.
     *   - Không gian: O(n) cho việc lưu trữ chuỗi nhị phân.
 */
-void problem_1_slution_2() {
+void problem_1_solution_2() {
     const int n = 4;
     generate_binary_string("", n);
 }
