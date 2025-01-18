@@ -46,9 +46,9 @@ void generate_combination(int com[], const int currIndex, const int prev) {
         return;
     }
 
-    for (int i = prev + 1; i <= N - (K - 1) + currIndex; i++) {
-        com[currIndex] = i;
-        generate_combination(com, currIndex + 1, i);
+    for (int n = prev + 1; n <= N - (K - 1) + currIndex; n++) {
+        com[currIndex] = n;
+        generate_combination(com, currIndex + 1, n);
     }
 }
 
