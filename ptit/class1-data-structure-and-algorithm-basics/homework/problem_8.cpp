@@ -31,7 +31,7 @@ void generate_random_number_combination() {
     // Sap xep thu tu ngau nhien
     for (int i = 0; i <= max; i++) {
         srand(chrono::duration_cast<chrono::nanoseconds>(chrono::system_clock::now().time_since_epoch()).count());
-        const int randIdx = i + (rand() % (max - i + 1)); // sinh so ngau nhien trong khoang [i, max - i]
+        const int randIdx = i + (rand() % (max - i + 1)); // sinh so ngau nhien trong khoang [i, max]
         const int temp = randomNums[i];
         randomNums[i] = randomNums[randIdx];
         randomNums[randIdx] = temp;
