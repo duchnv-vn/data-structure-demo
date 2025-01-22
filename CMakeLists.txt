@@ -6,5 +6,5 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(.)
 
 add_executable(data_structure_demo
-        ptit/class1-data-structure-and-algorithm-basics/homework/problem_8.cpp
+        ptit/class2-next-permutation-and-traversal-and-recursion-algorithm/main.cpp
 )
