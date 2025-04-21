@@ -10,7 +10,8 @@ struct Node {
     }
 };
 
-class BinaryTree {};
+class BinaryTree {
+};
 
 void leastCostSearch() {
 }
@@ -39,19 +40,17 @@ void insertNode(Node *(&node_ptr), const int v) {
     }
 }
 
-void createBinaryTree(Node *(&root_ptr)) {
-    const int N = 5;
-    int values[N] = {40, 50, 100, 95, 30};
-
+void createBinaryTree(Node *(&root_ptr), int values[], const int N) {
     for (int i = 0; i < N; i++) {
         insertNode(root_ptr, values[i]);
     }
-
-
 }
 
 int main() {
+    const int N = 5;
+    int values[N] = {40, 50, 100, 95, 30};
+
     Node *root_ptr;
-    createBinaryTree(root_ptr);
+    createBinaryTree(root_ptr, values, N);
     return 0;
 }
