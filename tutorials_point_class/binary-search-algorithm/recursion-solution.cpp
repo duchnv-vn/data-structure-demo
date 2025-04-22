@@ -23,11 +23,11 @@ int binarySearch(const int *arr, const int left, const int right, const int keyV
 }
 
 int main() {
-    const int n = 10;
+    const auto n = 10;
     const int arr[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     const auto keyValue = 3;
 
-    const int index = binarySearch(arr, 0, n - 1, keyValue);
+    const auto index = binarySearch(arr, 0, n - 1, keyValue);
 
     if (index != -1) {
         cout << "Found the value at index: " << index << endl;
