@@ -8,21 +8,17 @@ void swapping(int &a, int &b) {
 }
 
 void selectionSort(int *arr, const int n) {
-    int pos = 0;
-
-    while (pos < n - 1) {
-        int min = arr[pos];
-        int minPos = pos;
-        for (int i = pos + 1; i < n; i++) {
-            if (arr[i] < min) {
-                minPos = i;
-                min = arr[i];
+    for (int i = 0; i < n - 1; i++) {
+        int min = arr[i];
+        int minPos = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < min) {
+                minPos = j;
+                min = arr[j];
             }
         }
 
-        if (minPos != pos) swapping(arr[pos], arr[minPos]);
-
-        pos++;
+        if (minPos != i) swapping(arr[i], arr[minPos]);
     }
 }
 
