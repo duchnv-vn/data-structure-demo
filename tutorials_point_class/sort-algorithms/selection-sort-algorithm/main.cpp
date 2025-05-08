@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void swapping(int &a, int &b) {
+void swap(int &a, int &b) {
     const auto temp = a;
     a = b;
     b = temp;
@@ -18,7 +18,7 @@ void selectionSort(int *arr, const int n) {
             }
         }
 
-        if (minPos != i) swapping(arr[i], arr[minPos]);
+        if (minPos != i) swap(arr[i], arr[minPos]);
     }
 }
 

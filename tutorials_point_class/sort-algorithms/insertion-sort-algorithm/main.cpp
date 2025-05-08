@@ -1,12 +1,6 @@
 #include <iostream>
 using namespace std;
 
-void swapping(int &a, int &b) {
-    const auto temp = a;
-    a = b;
-    b = temp;
-}
-
 void insertionSort(int *arr, const int n) {
     for (int i = 0; i < n; i++) {
         const auto val = arr[i];
