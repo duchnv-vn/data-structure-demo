@@ -6,5 +6,5 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(.)
 
 add_executable(data_structure_demo
-        tutorials_point_class/hashing/disjoint_checking.cpp
+        tutorials_point_class/two-pointers/target-equal-sum-pair.cpp
 )
